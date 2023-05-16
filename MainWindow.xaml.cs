@@ -23,6 +23,12 @@ namespace ProjektSmestralny
         public MainWindow()
         {
             InitializeComponent();
+
+            Start();
+        }
+        public void Start()
+        {
+
         }
     }
 }
