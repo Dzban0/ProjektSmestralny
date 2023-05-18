@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,18 @@ namespace ProjektSmestralny
         {
             InitializeComponent();
 
-            Start();
+            string connectionString = "SERVER=localhost;DATABASE=test_db;UID=root;PASSWORD=;";
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            MySqlCommand cmd = new MySqlCommand("select * from test_users", connection);
+
+            DataTable dt = new DataTable();
+            dt.Load(cmd.ExcuteReader());
+            connection.Close();
+
+            dtGrid.DataContext = dt;
+
         }
         public void Start()
         {
