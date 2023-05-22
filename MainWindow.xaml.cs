@@ -27,9 +27,9 @@ namespace ProjektSmestralny
 
             string connectionString = "SERVER=localhost;DATABASE=test_db;UID=root;PASSWORD=;";
 
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            projekt connection = new projekt(connectionString);
 
-            MySqlCommand cmd = new MySqlCommand("select * from test_users", connection);
+            projekt cmd = new projekt("select * from test_users", connection);
 
             DataTable dt = new DataTable();
             dt.Load(cmd.ExcuteReader());
