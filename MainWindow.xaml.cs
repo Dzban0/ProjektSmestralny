@@ -44,49 +44,6 @@ namespace ProjektSmestralny
         }
         public static partial class MyConsoleApp
         {
-            private static bool shouldContinue = true;
-            private static int nextID = 0;
-            private static List<RaceMember> raceMembers = new List<RaceMember>();
-            public static void Start()
-            {
-                StartupMessage();
-                SampleDataFill();
-
-                while (shouldContinue)
-                {
-                    Analyze(Console.ReadLine());
-                }
-
-                ExitMessage();
-            }
-
-            private static void Analyze(string? instruction)
-            {
-                if (instruction is null || instruction == "") return;
-
-                string command = instruction.Split(' ')[0].ToUpper();
-                switch (command)
-                {
-                    case "ADD":
-                        ADD(instruction);
-                        break;
-                    case "DEL":
-                        DEL(instruction);
-                        break;
-                    case "CMP":
-                        CMP(instruction);
-                        break;
-                    case "LST":
-                        LST();
-                        break;
-                    case "CLS":
-                        CLS();
-                        break;
-                    default:
-                        NotRecognized(command);
-                        break;
-                }
-            }
 
             private static void StartupMessage()
             {
