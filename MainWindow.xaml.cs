@@ -51,20 +51,10 @@ namespace ProjektSmestralny
                 StringBuilder sb = new StringBuilder();
 
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
-                sb.AppendLine("Welcome!");
-                sb.AppendLine("In this app you can add Marathon members and compare their times.");
-                sb.AppendLine("To do so, you can use the following commands:");
-                sb.AppendLine();
-                Console.WriteLine(sb);
+
 
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                sb.AppendLine("ADD <Name> <Surname> <Time hh:mm:ss> - adds new entry with a new member");
-                sb.AppendLine("DEL <ID> - remove a race member");
-                sb.AppendLine("CMP <ID> <ID> - compares two race members");
-                sb.AppendLine("LST - list all race members");
-                sb.AppendLine("CLS - close the program");
-                sb.AppendLine();
-                Console.WriteLine(sb);
+
 
                 Console.ForegroundColor = consoleColor;
             }
@@ -82,11 +72,8 @@ namespace ProjektSmestralny
                 Console.ForegroundColor = consoleColor;
             }
 
-            private static int NextMovie()
-            {
-                nextMovie++;
-                return nextMovie;
-            }
+
+
         }
     }
 }
