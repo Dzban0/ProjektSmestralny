@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -21,22 +22,15 @@ namespace ProjektSmestralny
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        /// <summary>
+        /// Interaction logic for MainWindow.xaml
+        /// </summary>
+        public partial class MainWindow : MetroWindow
         {
-            InitializeComponent();
-
-            string connectionString = "SERVER=localhost;DATABASE=test_db;UID=root;PASSWORD=;";
-
-            projekt connection = new projekt(connectionString);
-
-            projekt cmd = new projekt("select * from test_users", connection);
-
-            DataTable dt = new DataTable();
-            dt.Load(cmd.ExcuteReader());
-            connection.Close();
-
-            dtGrid.DataContext = dt;
-
+            public MainWindow()
+            {
+                InitializeComponent();
+            }
         }
         public void Start()
         {
@@ -44,33 +38,10 @@ namespace ProjektSmestralny
         }
         public static partial class MyConsoleApp
         {
+            public static string Films { get; set; }
+            public static string Actors { get; set; }
+            public static string Movie_Studio { get; set; }
 
-            private static void StartupMessage()
-            {
-                ConsoleColor consoleColor = Console.ForegroundColor; // previous color
-                StringBuilder sb = new StringBuilder();
-
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
-
-
-                Console.ForegroundColor = ConsoleColor.Cyan;
-
-
-                Console.ForegroundColor = consoleColor;
-            }
-
-            private static void ExitMessage()
-            {
-                ConsoleColor consoleColor = Console.ForegroundColor; // previous color
-                StringBuilder sb = new StringBuilder();
-
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
-                sb.AppendLine("Quitting...");
-                sb.AppendLine();
-                Console.WriteLine(sb);
-
-                Console.ForegroundColor = consoleColor;
-            }
 
 
 

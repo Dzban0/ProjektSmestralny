@@ -1,12 +1,18 @@
-﻿<Window x:Class="ProjektSmestralny.MainWindow"
+﻿<mah:MetroWindow  x:Class="ProjektSmestralny.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:ProjektSmestralny"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1200" Width="1200">
+        Title="KinoFan" Height="1200" Width="1200">
     <Grid>
-        <DataGrid Margin="10,10,-10,79" Name="dtGrid" ItemsSource="{Binding}"/>
+        <Grid.ColumnDefinitions>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            
+        </Grid.RowDefinitions>
     </Grid>
-</Window>
+</mah:MetroWindow>
