@@ -9,11 +9,16 @@
         Title="KinoFan" Height="1200" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
-            
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        
         <Grid.RowDefinitions>
-            
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
     </Grid>
 </mah:MetroWindow>
