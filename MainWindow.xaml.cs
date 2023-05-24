@@ -20,31 +20,12 @@ namespace ProjektSmestralny
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
-        /// <summary>
-        /// Interaction logic for MainWindow.xaml
-        /// </summary>
-        public partial class MainWindow : MetroWindow
+        public MainWindow()
         {
-            public MainWindow()
-            {
-                InitializeComponent();
-            }
-        }
-        public void Start()
-        {
-
-        }
-        public static partial class MyConsoleApp
-        {
-            public static string Films { get; set; }
-            public static string Actors { get; set; }
-            public static string Movie_Studio { get; set; }
-
-
-
-
+            InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }
