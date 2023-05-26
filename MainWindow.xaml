@@ -7,6 +7,22 @@
         xmlns:local="clr-namespace:ProjektSmestralny"
         mc:Ignorable="d"
         Title="KinoFan" Height="1200" Width="1200">
+    <mah:MetroWindow.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource
+            {x:Type Button}}">
+            <Setter Property="FontSize" Value="26" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <Style TargetType="TextBox" BasedOn="{StaticResource
+            {x:Type TextBox}}">
+            <Setter Property="FontSize" Value="46" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="IsReadOnly" Value="True" />
+        </Style>
+    </mah:MetroWindow.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />

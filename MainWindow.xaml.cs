@@ -1,7 +1,7 @@
 ﻿using MahApps.Metro.Controls;
+using ProjektSmestralny;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjektSmestralny
+namespace KalkulatorApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,7 +24,6 @@ namespace ProjektSmestralny
     {
         public MainWindow()
         {
-            InitializeComponent();
             DataContext = new MainViewModel();
         }
     }

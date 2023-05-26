@@ -2,18 +2,16 @@
 
 namespace ProjektSmestralny
 {
-    public partial class MainWindow
+    public partial class MainWindow : MetroWindow
     {
         /// <summary>
         /// Interaction logic for MainWindow.xaml
         /// </summary>
-        public partial class MainWindow : MetroWindow
+        public MainWindow()
         {
-            public MainWindow()
-            {
-                InitializeComponent();
-                DataContext = new MainViewModel();
-            }
+            InitializeComponent();
+            DataContext = new MainViewModel();
         }
+
     }
 }
