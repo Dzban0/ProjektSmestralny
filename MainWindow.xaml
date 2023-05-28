@@ -8,12 +8,6 @@
         mc:Ignorable="d"
         Title="KinoFan" Height="1200" Width="1200">
     <mah:MetroWindow.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource
-            {x:Type Button}}">
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="Margin" Value="5" />
-        </Style>
-
         <Style TargetType="TextBox" BasedOn="{StaticResource
             {x:Type TextBox}}">
             <Setter Property="FontSize" Value="46" />
@@ -36,5 +30,22 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="0" Grid.Column="0" Text="FILM1" />
+        <TextBox Grid.Row="0" Grid.Column="1" Text="FILM2" />
+        <TextBox Grid.Row="0" Grid.Column="2" Text="FILM3" />
+        <TextBox Grid.Row="0" Grid.Column="3" Text="FILM4" />
+        <TextBox Grid.Row="1" Grid.Column="0" Text="FILM5" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="FILM6" />
+        <TextBox Grid.Row="1" Grid.Column="2" Text="FILM7" />
+        <TextBox Grid.Row="1" Grid.Column="3" Text="FILM8" />
+        <TextBox Grid.Row="2" Grid.Column="0" Text="FILM9" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="FILM10" />
+        <TextBox Grid.Row="2" Grid.Column="2" Text="FILM11" />
+        <TextBox Grid.Row="2" Grid.Column="3" Text="FILM12" />
+        <TextBox Grid.Row="3" Grid.Column="0" Text="FILM13" />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="FILM14" />
+        <TextBox Grid.Row="3" Grid.Column="2" Text="FILM15" />
+        <TextBox Grid.Row="3" Grid.Column="3" Text="FILM16" />
     </Grid>
 </mah:MetroWindow>
