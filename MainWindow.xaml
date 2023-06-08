@@ -6,7 +6,7 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:ProjektSmestralny"
         mc:Ignorable="d"
-        Title="KinoFan" Height="1200" Width="1200">
+        Title="ProjectFS" Height="1200" Width="1200">
     <mah:MetroWindow.Resources>
         <Style TargetType="TextBox" BasedOn="{StaticResource
             {x:Type TextBox}}">
