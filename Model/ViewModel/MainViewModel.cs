@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjektSmestralny
+namespace ProjektSmestralny.Model.ViewModel
 {
-    public class MainViewModel : ObservableObject
+    public class MainViewModel
     {
         public HomeViewModel HomeVm { get; set; }
         private object _currentView;
@@ -18,10 +18,9 @@ namespace ProjektSmestralny
         public object CurrentView
         {
             get { return _currentView; }
-            set 
+            set
             {
                 _currentView = value;
-                OnPropertyChanged();
             }
         }
         public MainViewModel()
@@ -29,8 +28,6 @@ namespace ProjektSmestralny
             HomeVm = new HomeViewModel();
             CurrentView = HomeVm;
         }
-
-
 
         // public static string? Films { get; set; }
         // public static string? Actors { get; set; }

@@ -8,5 +8,6 @@ namespace ProjektSmestralny.Model.ViewModel
 {
     class HomeViewModel 
     {
+
     }
 }
