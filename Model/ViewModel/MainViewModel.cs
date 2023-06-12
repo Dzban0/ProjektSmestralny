@@ -10,24 +10,25 @@ using System.Threading.Tasks;
 
 namespace ProjektSmestralny.Model.ViewModel
 {
-    public class MainViewModel
+    class MainViewModel : ObservableObject
     {
-        // public HomeViewModel HomeVm { get; set; }
-        // private object _currentView;
+        public HomeViewModel HomeVm { get; set; }
 
-        // public object CurrentView
-        //     {
-        //         get { return _currentView; }
-        //         set
-        //     {
-        //         _currentView = value;
-        //     }
-        // }
-        // public MainViewModel()
-        // {
-        // HomeVm = new HomeViewModel();
-        // CurrentView = HomeVm;
-        // }
+        private object _currentView;
+
+        public object CurrentView
+        {
+            get { return _currentView; }
+            set
+            {
+                 _currentView = value;
+                OnPropertyChanged();
+            }
+        }
+        public MainViewModel()
+        {
+            HomeVm = new HomeViewModel();
+        }
 
         // public static string? Films { get; set; }
         // public static string? Actors { get; set; }
