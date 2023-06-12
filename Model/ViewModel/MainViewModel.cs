@@ -1,6 +1,6 @@
 ﻿using ProjektSmestralny.Core;
 using ProjektSmestralny.Model.ViewModel;
-// using ProjektSmestralny.View;
+using ProjektSmestralny.Model.View;
 using System;
 using System.Collections.Generic;
 using System.Data;
