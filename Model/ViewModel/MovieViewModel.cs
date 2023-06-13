@@ -1,22 +1,21 @@
-﻿using System;
+﻿using ProjektSmestralny.Model.Repository;
+using ProjektSmestralny.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace ProjektSmestralny.Model.ViewModel
 {
     public class MovieViewModel
     {
-        public ObservableCollection<Movie> Movies { get; set; }
+        public ObservableCollection<Films> Movies { get; set; }
         private MovieRepository MovieRepository { get; set; }
 
         public MovieViewModel()
         {
             MovieRepository = new MovieRepository();
-            Movies = new ObservableCollection<Movie>(MovieRepository.movieRepository);
+            Movies = new ObservableCollection<Films>(MovieRepository.movieRepository);
             Movies.CollectionChanged += Movies_CollectionChanged;       // Event Handler for change in collection
         }
 
@@ -25,11 +24,11 @@ namespace ProjektSmestralny.Model.ViewModel
          * Saves time and resources by searching in Collection in memory
          * rather than in database
          */
-        public List<Movie> searchRepo(string searchQuery)
+        public List<Films> searchRepo(string searchQuery)
         {
             if (searchQuery == "*" || searchQuery == " ")
                 throw new Exception("Warning: Symbols such as '*' or whitespace are not acceptable");
-            List<Movie> MoviesList =                // Temporary list for storing results returned from search query
+            List<Films> MoviesList =                // Temporary list for storing results returned from search query
                 (from tempMovie in Movies
                  where tempMovie.Title.Contains(searchQuery)
                  select tempMovie).ToList();

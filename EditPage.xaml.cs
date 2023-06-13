@@ -1,28 +1,74 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ProjektSmestralny.Model.ViewModel;
+using ProjektSmestralny.Models;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ProjektSmestralny
 {
     /// <summary>
-    /// Logika interakcji dla klasy EditPage.xaml
+    /// Interaction logic for EditPage.xaml
     /// </summary>
-    public partial class EditPage : UserControl
+    public partial class EditPage : Page
     {
-        public EditPage()
+        private Frame Frame;
+        private MovieViewModel MovieVM;
+        private Films Movie;
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+        public EditPage() => InitializeComponent();
+
+        public EditPage(Frame frame, MovieViewModel movieVM, Films movie)
         {
             InitializeComponent();
+            this.Frame = frame;
+            this.MovieVM = movieVM;
+            this.Movie = movie;
+            // Loading Record into TextBoxes
+            this.Title_TBox.Text = movie.Title;
+            this.Genre_TBox.Text = movie.Genre;
+            this.duration_TBox.Text = movie.Duration.ToString();
+            this.ReleaseYear_TBox.Text = movie.ReleaseYear.ToString();
+            this.UpdateBtn.IsEnabled = false;           // Diable the update button
+        }
+
+        /*
+         * Function: Event Handler for Update Button
+         * Updates the record in Collection
+         */
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            Films tempMovie = new Films();
+            tempMovie.Id = Movie.Id;
+            tempMovie.Title = Title_TBox.Text;
+            tempMovie.Genre = Genre_TBox.Text;
+            tempMovie.Duration = int.Parse(duration_TBox.Text.ToString());
+            tempMovie.ReleaseYear = int.Parse(ReleaseYear_TBox.Text.ToString());
+            MovieVM.UpdateRecordInRepo(tempMovie);
+            MessageBox.Show("The record is updated", "Update");
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.NavigationService.GoBack();
+        }
+
+        /* 
+         * Function: Event Handler for TextBox
+         * Enable update button if text is edited in Box
+         */
+        private void LostFocus_TextBox(object sender, RoutedEventArgs e)
+        {
+            if (!(this.Movie.Title.Equals(this.Title_TBox.Text)
+                && this.Movie.Genre.Equals(this.Genre_TBox.Text)
+                && this.Movie.Duration.Equals(int.Parse(this.duration_TBox.Text))
+                && this.Movie.ReleaseYear.Equals(int.Parse(this.ReleaseYear_TBox.Text))))
+            {
+                UpdateBtn.IsEnabled = true;
+            }
         }
     }
 }
