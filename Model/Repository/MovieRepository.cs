@@ -9,6 +9,7 @@ namespace ProjektSmestralny.Model.Repository
     public class MovieRepository
     {
         public List<Films> movieRepository { get; set; }
+        public object Properties { get; private set; }
 
         public MovieRepository()
         {
@@ -19,7 +20,7 @@ namespace ProjektSmestralny.Model.Repository
         {
             List<Films> listOfMovies = new List<Films>();
 
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.connString))
+            using (SqlConnection conn = new(Properties.Settings.Default.connString))
             {
                 if (conn == null)
                 {
@@ -50,7 +51,7 @@ namespace ProjektSmestralny.Model.Repository
         public List<Films> GetMovieRepoSearch(string searchQuery)
         {
             List<Films> listOfMovies = new List<Films>();
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.connString))
+            using (SqlConnection conn = new(Properties.Settings.Default.connString))
             {
                 if (conn == null)
                 {
@@ -69,12 +70,7 @@ namespace ProjektSmestralny.Model.Repository
 
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    Films z = new Films();
-                    z.Id = (int)row["id"];
-                    z.Title = row["Title"].ToString();
-                    z.ReleaseYear = (int)row["ReleaseYear"];
-                    z.Genre = row["Genre"].ToString();
-                    z.Duration = (int)row["Duration"];
+                    Films z = new Films { Id = (int)row["id"], Title = row["Title"].ToString(), ReleaseYear = (int)row["ReleaseYear"], Genre = row["Genre"].ToString(), Duration = (int)row["Duration"] };
                     listOfMovies.Add(z);
                 }
                 return listOfMovies;
@@ -83,7 +79,7 @@ namespace ProjektSmestralny.Model.Repository
 
         public void addNewRecord(Films movieRecord)
         {
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.connString))
+            using (SqlConnection conn = new(Properties.Settings.Default.connString))
             {
                 if (conn == null)
                 {
@@ -136,7 +132,7 @@ namespace ProjektSmestralny.Model.Repository
 
         public void UpdateRecord(Films movieRecord)
         {
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.connString))
+            using (SqlConnection conn = new(Properties.Settings.Default.connString))
             {
                 if (conn == null)
                 {

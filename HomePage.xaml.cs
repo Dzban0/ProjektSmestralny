@@ -9,7 +9,7 @@ namespace MovieCatalog
     /// </summary>
     public partial class HomePage : Page
     {
-        private Frame Frame;
+        private readonly Frame Frame;
         MovieViewModel MovieVM;
 
         public HomePage()

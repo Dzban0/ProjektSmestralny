@@ -1,32 +1,10 @@
-﻿using ProjektSmestralny.Core;
-using ProjektSmestralny.Model.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjektSmestralny.Model.ViewModel
+﻿namespace ProjektSmestralny.Model.ViewModel
 {
-    class MainViewModel : ObservableObject
+    class MainViewModel
     {
-        public HomeViewModel HomeVm { get; set; }
-
-        private object _currentView;
-
-        public object CurrentView
-        {
-            get { return _currentView; }
-            set
-            {
-                 _currentView = value;
-                OnPropertyChanged();
-            }
-        }
         public MainViewModel()
         {
-            HomeVm = new HomeViewModel();
+
         }
 
         // public static string? Films { get; set; }
