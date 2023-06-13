@@ -38,7 +38,7 @@ namespace ProjektSmestralny.Model.ViewModel
         /*
          * Function: Add Record to Collection and Database
          */
-        public void AddRecordToRepo(Movie movie)
+        public void AddRecordToRepo(Films movie)
         {
             if (movie == null)
                 throw new ArgumentNullException("Error: The argument is Null");
@@ -69,7 +69,7 @@ namespace ProjektSmestralny.Model.ViewModel
          * Function: Updates the Object in Collection
          * with refernce to the id
          */
-        public void UpdateRecordInRepo(Movie movie)
+        public void UpdateRecordInRepo(Films movie)
         {
             if (movie.Id < 0)
                 throw new Exception("Error: ID cannot be negative");
@@ -108,11 +108,6 @@ namespace ProjektSmestralny.Model.ViewModel
                 List<Films> tempListOfMovies = e.NewItems.OfType<Films>().ToList();
                 MovieRepository.UpdateRecord(tempListOfMovies[0]);      // As the IDs are unique, only one row will be effected hence first index only
             }
-        }
-
-        internal void UpdateRecordInRepo(Films tempMovie)
-        {
-            throw new NotImplementedException();
         }
     }
 }

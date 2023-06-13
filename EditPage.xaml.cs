@@ -15,11 +15,10 @@ namespace ProjektSmestralny
         private MovieViewModel MovieVM;
         private Films Movie;
 
-        private void InitializeComponent()
+        public EditPage()
         {
-            throw new NotImplementedException();
+            InitializeComponent();
         }
-        public EditPage() => InitializeComponent();
 
         public EditPage(Frame frame, MovieViewModel movieVM, Films movie)
         {

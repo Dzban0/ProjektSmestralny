@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace ProjektSmestralny.Model.Repository
 {
@@ -133,7 +134,7 @@ namespace ProjektSmestralny.Model.Repository
             }
         }
 
-        public void UpdateRecord(Movie movieRecord)
+        public void UpdateRecord(Films movieRecord)
         {
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.connString))
             {

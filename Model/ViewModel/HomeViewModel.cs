@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektSmestralny.Model.ViewModel
 {
-    class HomeViewModel 
+    internal class HomeViewModel
     {
-
     }
 }
