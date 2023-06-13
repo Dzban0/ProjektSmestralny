@@ -35,10 +35,6 @@ namespace ProjektSmestralny
             this.UpdateBtn.IsEnabled = false;           // Diable the update button
         }
 
-        /*
-         * Function: Event Handler for Update Button
-         * Updates the record in Collection
-         */
         private void Update_Click(object sender, RoutedEventArgs e)
         {
             Films tempMovie = new Films();
@@ -56,10 +52,6 @@ namespace ProjektSmestralny
             this.Frame.NavigationService.GoBack();
         }
 
-        /* 
-         * Function: Event Handler for TextBox
-         * Enable update button if text is edited in Box
-         */
         private void LostFocus_TextBox(object sender, RoutedEventArgs e)
         {
             if (!(this.Movie.Title.Equals(this.Title_TBox.Text)

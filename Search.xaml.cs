@@ -92,7 +92,7 @@ namespace MovieCatalog
          */
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            Movie tempMovie = (Movie)gridTable.SelectedItem;
+            Films tempMovie = (Films)gridTable.SelectedItem;
             Frame.Navigate(new EditPage(Frame, MovieVM, tempMovie));
         }
 

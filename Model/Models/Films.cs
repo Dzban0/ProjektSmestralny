@@ -18,5 +18,8 @@ namespace ProjektSmestralny.Models
 
         public ICollection<Actors>? Actors { get; set; }
         public ICollection<Category>? Category { get; set; }
+        public string Title { get; internal set; }
+        public string Genre { get; internal set; }
+        public int Duration { get; internal set; }
     }
 }

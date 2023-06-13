@@ -68,13 +68,13 @@ namespace ProjektSmestralny.Model.Repository
 
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    Movie m = new Films();
-                    m.Id = (int)row["id"];
-                    m.Title = row["Title"].ToString();
-                    m.ReleaseYear = (int)row["ReleaseYear"];
-                    m.Genre = row["Genre"].ToString();
-                    m.Duration = (int)row["Duration"];
-                    listOfMovies.Add(m);
+                    Films z = new Films();
+                    z.Id = (int)row["id"];
+                    z.Title = row["Title"].ToString();
+                    z.ReleaseYear = (int)row["ReleaseYear"];
+                    z.Genre = row["Genre"].ToString();
+                    z.Duration = (int)row["Duration"];
+                    listOfMovies.Add(z);
                 }
                 return listOfMovies;
             }
@@ -113,10 +113,6 @@ namespace ProjektSmestralny.Model.Repository
             }
         }
 
-        /*
-         * Function: Deletes the record with reference to supplied id
-         * with the help of stored procedure
-         */
         public void DelRecord(int id)
         {
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.connString))

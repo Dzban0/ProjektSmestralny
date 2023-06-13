@@ -100,14 +100,19 @@ namespace ProjektSmestralny.Model.ViewModel
             }
             else if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
             {
-                List<Movie> tempListOfRemovedItems = e.OldItems.OfType<Movie>().ToList();
+                List<Films> tempListOfRemovedItems = e.OldItems.OfType<Films>().ToList();
                 MovieRepository.DelRecord(tempListOfRemovedItems[0].Id);
             }
             else if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Replace)
             {
-                List<Movie> tempListOfMovies = e.NewItems.OfType<Movie>().ToList();
+                List<Films> tempListOfMovies = e.NewItems.OfType<Films>().ToList();
                 MovieRepository.UpdateRecord(tempListOfMovies[0]);      // As the IDs are unique, only one row will be effected hence first index only
             }
+        }
+
+        internal void UpdateRecordInRepo(Films tempMovie)
+        {
+            throw new NotImplementedException();
         }
     }
 }
