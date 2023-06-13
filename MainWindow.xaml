@@ -46,7 +46,7 @@
                              FontSize="30"
                              Style="{StaticResource MenuButtonTheme}"
                 />
-                <RadioButton Content="Movies"
+                <RadioButton Content="Other"
                              Height="50"
                              Foreground="White"
                              FontSize="30"

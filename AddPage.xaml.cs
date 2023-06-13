@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjektSmestralny.Model.View
+namespace ProjektSmestralny
 {
     /// <summary>
-    /// Logika interakcji dla klasy HomeView.xaml
+    /// Logika interakcji dla klasy AddPage.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class AddPage : UserControl
     {
-        public HomeView()
+        public AddPage()
         {
             InitializeComponent();
         }

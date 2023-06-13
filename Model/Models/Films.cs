@@ -14,6 +14,7 @@ namespace ProjektSmestralny.Models
 
         [Required]
         public string? Name { get; set; }
+        public int ReleaseYear { get; set; }
 
         public ICollection<Actors>? Actors { get; set; }
         public ICollection<Category>? Category { get; set; }
